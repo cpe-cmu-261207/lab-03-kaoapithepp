@@ -43,8 +43,12 @@ export const filter = (arr, callback) => {
   // TODO: implement here
   let filterArr = [];
   for (let i=0 in arr.length) {
-    const temp = callback(arr[i],i);
-    if(temp) filterArr.push(arr[i]);
+    // this callback var is already assigned a condition
+    // but we could create 'temp' var for preserve
+    //const temp = callback(arr[i],i);
+
+    // in this case, we're not :P
+    if(callback(arr[i],i)) filterArr.push(arr[i]);
   }
   return filterArr;
 }
